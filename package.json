@@ -2,5 +2,7 @@
   "name": "js-olx2fb",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
 }
