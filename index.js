@@ -10,7 +10,7 @@ var settings = {
     "x-apikey": "5f2c8c05013b1c34acef749b",
     "cache-control": "no-cache"
   }
-}
+};
 
 //const breakout = $.ajax(settings).done(function (response) {
 //  console.log(response);
@@ -25,19 +25,20 @@ var settings = {
 
  $(document).ready(function() {
     $('#example').DataTable( {
-        ajax: {
-        data: settings,
-        dataSrc: Object,
-        columns: [
-            { title: "ID" },
-            { data: '_id' },
-            { title: "Client Name" },
-            { data: 'Client Name'},
-            { title: "Sites" },
-            { data: 'Sites'},
+        "ajax": {
+        "url": "settings",
+        "dataSrc": ""
+        },
+        "columns": [
+            
+            { "data": 'object._id' },
+            
+            { "data": 'object.Client Name'},
+            
+            { "data": 'object.Sites'},
         ]
     } 
-    }
-    );
+    
+    )
 console.log(breakout)
  });
