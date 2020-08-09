@@ -15,9 +15,23 @@ var settings = {
 $.ajax(settings).done(function (response) {
   console.log(response);
 
-var data = JSON.parse(response);
- data.forEach((Object) => {
+var dataSet = JSON.parse(response);
+var breakout = dataset(Object);
  
- console.log(Object) })
+ $(document).ready(function() {
+    $('#example').DataTable( {
+        data: breakout,
+        columns: [
+            { title: "Client Name" },
+            { title: "Position" },
+            { title: "Office" },
+            { title: "Extn." },
+            { title: "Start date" },
+            { title: "Salary" }
+        ]
+    } );
+ //data.forEach((Object) => {
+ 
+ console.log(Object) });
 
  });

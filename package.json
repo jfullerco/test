@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "datatables": "^1.10.18",
     "jquery": "^3.5.1",
     "node-fetch": "^2.6.0"
   }
