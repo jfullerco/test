@@ -10,7 +10,7 @@ var settings = {
     "x-apikey": "5f2c8c05013b1c34acef749b",
     "cache-control": "no-cache"
   }
-}
+};
 
 $.ajax(settings).done(function (response) {
   console.log(response);
