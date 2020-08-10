@@ -12,11 +12,22 @@ var settings = {
   }
 };
 
-var api = new $.fn.dataTable.Api( settings );
+const breakout = $.ajax(settings).done(function (response) {
+//  console.log(response);
+
+var dataSet = JSON.parse(breakout);
+ 
+ 
+ //data.forEach((Object) => {
+ 
+ //console.log(Object)
+});
+
+//var api = new $.fn.dataTable.Api( settings );
 
 $('#example').dataTable( {
-    "drawCallback": function( settings ) {
-        var api = new $.fn.dataTable.Api( settings );
+    "drawCallback": function( dataSet ) {
+        var api = new $.fn.dataTable.Api( dataSet );
  
         // Output the data for the visible rows to the browser's console
         // You might do something more useful with it!
