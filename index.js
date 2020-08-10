@@ -1,4 +1,4 @@
-const url = "https://tiems-d1ca.restdb.io/rest/clients?x-apikey:5f2c8c05013b1c34acef749b";
+//const url = "https://tiems-d1ca.restdb.io/rest/clients?x-apikey:5f2c8c05013b1c34acef749b";
 
 var settings = {
   "async": true,
@@ -12,33 +12,14 @@ var settings = {
   }
 };
 
-//const breakout = $.ajax(settings).done(function (response) {
-//  console.log(response);
+var api = new $.fn.dataTable.Api( settings );
 
-//var dataSet = JSON.parse((breakout),true);
+$('#example').dataTable( {
+    "drawCallback": function( settings ) {
+        var api = new $.fn.dataTable.Api( settings );
  
- 
- //data.forEach((Object) => {
- 
- //console.log(Object)
-//})
-
- $(document).ready(function() {
-    $('#example').DataTable( {
-        "ajax": {
-        "url": "settings",
-        "dataSrc": ""
-        },
-        "columns": [
-            
-            { "data": 'object._id' },
-            
-            { "data": 'object.Client Name'},
-            
-            { "data": 'object.Sites'},
-        ]
-    } 
-    
-    )
-console.log(breakout)
- });
+        // Output the data for the visible rows to the browser's console
+        // You might do something more useful with it!
+        console.log( api.rows( {page:'current'} ).data() );
+    }
+} );
