@@ -15,7 +15,7 @@ var settings = {
 const breakout = $.ajax(settings).done(function (response) {
 //  console.log(response);
 
-var dataSet = JSON.parse(breakout);
+
  
  
  //data.forEach((Object) => {
@@ -23,14 +23,22 @@ var dataSet = JSON.parse(breakout);
  //console.log(Object)
 });
 
-//var api = new $.fn.dataTable.Api( settings );
+var api = new $.fn.dataTable.Api( breakout );
 
 $('#example').dataTable( {
     "drawCallback": function( dataSet ) {
-        var api = new $.fn.dataTable.Api( dataSet );
- 
-        // Output the data for the visible rows to the browser's console
-        // You might do something more useful with it!
-        console.log( api.rows( {page:'current'} ).data() );
+      var api = new $.fn.dataTable.Api( dataSet );
+
+         columns: [
+            
+            { data: "_id" },
+            
+            { data: "Client Name"},
+            
+            { data: "Sites"},
+        ]
+
     }
-} );
+    
+}); 
+var dataSet = JSON.parse(breakout);
